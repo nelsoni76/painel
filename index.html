@@ -38,11 +38,11 @@ body::after{content:"";position:fixed;inset:0;background:repeating-linear-gradie
 .vitwrap img{display:block;width:100%;height:auto}
 .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:18px;text-align:center;font-size:12px;line-height:1.8;color:#8fcbe6;border:1px dashed var(--dim);border-radius:8px}
 .ph b{color:var(--cy2)}
-.dor{position:absolute;top:58%;left:41%;display:flex;align-items:center;gap:10px;z-index:3}
-.dor .lbl{font:bold 11px 'Courier New',monospace;letter-spacing:1px;color:#FF5252;line-height:1.55;text-shadow:0 0 10px rgba(0,0,0,.95),0 0 6px rgba(255,82,82,.6)}
-.dor .dot{position:relative;width:20px;height:20px;border:3px solid #FF5252;border-radius:50%;background:rgba(255,82,82,.35);box-shadow:0 0 18px #FF5252,inset 0 0 8px rgba(255,82,82,.8)}
-.dor .dot::after{content:"";position:absolute;inset:4px;background:#FF5252;border-radius:50%;box-shadow:0 0 12px #FF5252}
-.dor .dot::before{content:"";position:absolute;inset:-11px;border:2px solid rgba(255,82,82,.75);border-radius:50%;animation:ping 1.8s ease-out infinite}
+.dor{position:absolute;top:60%;left:67%;transform:translate(-50%,-50%);z-index:3}
+.dor .dot{position:relative;display:block;width:22px;height:22px;border:3px solid #FF3B3B;border-radius:50%;background:rgba(255,59,59,.45);box-shadow:0 0 22px #FF3B3B,inset 0 0 9px rgba(255,59,59,.9)}
+.dor .dot::after{content:"";position:absolute;inset:4px;background:#FF3B3B;border-radius:50%;box-shadow:0 0 12px #FF3B3B}
+.dor .dot::before{content:"";position:absolute;inset:-12px;border:2px solid rgba(255,59,59,.75);border-radius:50%;animation:ping 1.8s ease-out infinite}
+.dor .lbl{position:absolute;right:calc(100% + 12px);top:50%;transform:translateY(-50%);font:bold 12px 'Courier New',monospace;letter-spacing:1px;color:#eafbff;background:rgba(18,60,105,.8);border:1px solid rgba(79,195,247,.6);padding:5px 10px;border-radius:7px;white-space:nowrap;box-shadow:0 2px 10px rgba(0,0,0,.55)}
 .figcap{margin-top:12px;font-size:11px;letter-spacing:2px;color:#6fb9d9;text-align:center;line-height:1.8}
 .ft{max-width:1060px;margin:14px auto 0;text-align:center;font-size:10.5px;letter-spacing:2.5px;color:#3f7d9c}
 </style>
@@ -107,7 +107,7 @@ body::after{content:"";position:fixed;inset:0;background:repeating-linear-gradie
         <div class="ph" id="ph">⚡<b>Figura indisponível.</b>O link do Google Photos pode ter expirado — avise o Mr. T. na próxima carta que ele resolve.</div>
         <img src="https://lh3.googleusercontent.com/pw/AP1GczNvPA4vzfS7jT0MCL81q1FR6dPnM708FbgkWTo54ePng0djNpG6511qwP79ea_IW2O8Qc_yfwXpUPilziUNDxlXpKfHf8OXi4WRL64-t4_qA6F7IKcG=w1600" alt="" onload="document.getElementById('ph').style.display='none'" onerror="this.style.display='none'">
       </div>
-      <div class="dor"><span class="dot"></span><span class="lbl" style="text-align:left">DOR 1–2<br>POST. COXA E</span></div>
+      <div class="dor"><span class="lbl">DOR 1&ndash;2</span><span class="dot"></span></div>
     </div>
     <p class="figcap mono">BIOMETRIA: 114,0 KG · VO2 43 · STATUS: EM EVOLUÇÃO</p>
   </div>
