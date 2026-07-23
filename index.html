@@ -13,7 +13,6 @@ body::after{content:"";position:fixed;inset:0;background:repeating-linear-gradie
 .mono{font-family:'Courier New',ui-monospace,monospace}
 .hd{max-width:1060px;margin:0 auto;text-align:center;border:1px solid var(--dim);border-radius:10px;padding:16px 12px;background:var(--panel);box-shadow:0 0 28px rgba(79,195,247,.14),inset 0 0 32px rgba(79,195,247,.05)}
 .hd h1{font-size:clamp(20px,5.5vw,32px);letter-spacing:9px;color:var(--cy2);text-shadow:0 0 20px rgba(79,195,247,.85);font-weight:800}
-.hd p{margin-top:8px;font-size:11px;letter-spacing:3px;color:#6fb9d9}
 .grid{display:grid;grid-template-columns:1fr;gap:12px;max-width:1060px;margin:14px auto 0}
 @media(min-width:880px){.grid{grid-template-columns:1.02fr .98fr}.span2{grid-column:1/-1}}
 .panel{border:1px solid var(--dim);border-radius:10px;background:var(--panel);padding:15px 17px;box-shadow:inset 0 0 26px rgba(79,195,247,.05)}
@@ -43,7 +42,7 @@ body::after{content:"";position:fixed;inset:0;background:repeating-linear-gradie
 .dor .dot::after{content:"";position:absolute;inset:4px;background:#FF3B3B;border-radius:50%;box-shadow:0 0 12px #FF3B3B}
 .dor .dot::before{content:"";position:absolute;inset:-12px;border:2px solid rgba(255,59,59,.75);border-radius:50%;animation:ping 1.8s ease-out infinite}
 .dor .lbl{position:absolute;right:calc(100% + 12px);top:50%;transform:translateY(-50%);font:bold 12px 'Courier New',monospace;letter-spacing:1px;color:#eafbff;background:rgba(18,60,105,.8);border:1px solid rgba(79,195,247,.6);padding:5px 10px;border-radius:7px;white-space:nowrap;box-shadow:0 2px 10px rgba(0,0,0,.55)}
-.figcap{margin-top:12px;font-size:11px;letter-spacing:2px;color:#6fb9d9;text-align:center;line-height:1.8}
+.figcap{margin-top:12px;font-size:11px;letter-spacing:2px;color:#6fb9d9;text-align:center;line-height:1.9}
 .ft{max-width:1060px;margin:14px auto 0;text-align:center;font-size:10.5px;letter-spacing:2.5px;color:#3f7d9c}
 </style>
 </head>
@@ -57,18 +56,19 @@ body::after{content:"";position:fixed;inset:0;background:repeating-linear-gradie
 
   <div class="panel span2">
     <h2>STATUS DO SISTEMA</h2>
-    <div class="kv mono"><span>DIA 2 · QUA 22/07</span><b>EM ANDAMENTO — 2 DE 3 INEGOCIÁVEIS ✓</b></div>
-    <div class="kv mono"><span>PESAGEM + CORRIDA (MANHÃ)</span><b class="ok">✓ ✓ ANTES DO MEIO-DIA</b></div>
-    <div class="kv mono"><span>ÁGUA 3 L · CREATINA · DIETA</span><b>COLHIDAS ÀS 21H</b></div>
-    <div class="kv mono"><span>AVALIAÇÃO DE AMEAÇAS</span><b class="red">DOR 1–2 + SONO CURTO: 5H / 5H30 (2 NOITES)</b></div>
-    <div class="kv mono"><span>PRÓXIMA MISSÃO</span><b>HOJE 21:30 — BLINDAGEM 15MIN (ROLO + POSTERIOR E)</b></div>
+    <div class="kv mono"><span>DIA 2 · QUA 22/07</span><b class="ok">3 / 3 INEGOCIÁVEIS ✓</b></div>
+    <div class="kv mono"><span>DIETA</span><b>COM EXTRAS HOJE (VER QUAIS)</b></div>
+    <div class="kv mono"><span>ÁGUA</span><b>REGISTRAR — META 3 L</b></div>
+    <div class="kv mono"><span>CREATINA 6 G</span><b>REGISTRAR</b></div>
+    <div class="kv mono"><span>AVALIAÇÃO DE AMEAÇAS</span><b class="red">SONO EM DÍVIDA (5H30 · 5H) · DOR POSTERIOR E A CONFIRMAR</b></div>
+    <div class="kv mono"><span>PRÓXIMA MISSÃO</span><b>QUI 11H30 — PEITO+TRÍCEPS (DAVI): FECHA MUSC 3/3</b></div>
   </div>
 
   <div>
     <div class="panel">
       <h2>B1 · PESO — A META-MÃE</h2>
       <div class="big pulse">113,8 <small>KG</small></div>
-      <p class="sub">−1,2 KG (115 → 113,8) · ALVO 95,0 · MARCO AGO ≤112</p>
+      <p class="sub">−1,2 KG DO BASELINE · PRÓXIMO MARCO 112 (AGO)</p>
       <div class="track"><div class="fill" style="width:6%"></div></div>
       <div class="kv"><span>Caminho 115 → 95</span><b>6%</b></div>
     </div>
@@ -76,27 +76,27 @@ body::after{content:"";position:fixed;inset:0;background:repeating-linear-gradie
     <div class="panel" style="margin-top:12px">
       <h2>B2 · MUSCULAÇÃO — SEMANA</h2>
       <div class="big">2<small> DE 3</small></div>
-      <p class="sub">EXECUÇÃO-ALVO DO ANO: ≥92% · QUA É DIA DE CORRIDA</p>
+      <p class="sub">EXECUÇÃO-ALVO DO ANO: ≥92%</p>
       <div class="track"><div class="fill" style="width:67%"></div></div>
-      <div class="kv"><span>SEG · Pernas (Nicolle)</span><b class="ok">✓</b></div>
-      <div class="kv"><span>TER · Costas + Bíceps (Nicolle)</span><b class="ok">✓</b></div>
-      <div class="kv"><span>QUI · Peito + Tríceps (Davi, 11h30)</span><b class="red">PENDENTE</b></div>
+      <div class="kv"><span>Seg · Pernas (Nicolle)</span><b class="ok">✓</b></div>
+      <div class="kv"><span>Ter · Costas + Bíceps (Nicolle)</span><b class="ok">✓</b></div>
+      <div class="kv"><span>Qui · Peito + Tríceps (Davi)</span><b class="red">PENDENTE</b></div>
     </div>
 
     <div class="panel" style="margin-top:12px">
       <h2>B4 · MOTOR AERÓBICO</h2>
       <div class="big pulse">T−11<small> DIAS</small></div>
-      <p class="sub">PROVA 5K — DOM 02/08 · INSCRITO ✓</p>
-      <div class="kv"><span>Corridas da semana (qua·sex·dom)</span><b class="ok">1 de 3 — QUA ✓ (Denise e Campos)</b></div>
+      <p class="sub">5K — 02/08/2026 (INSCRITO)</p>
+      <div class="kv"><span>Corridas da semana (qua·sex·dom)</span><b>1 de 3 · qua ✓</b></div>
       <div class="kv"><span>VO2 (Garmin)</span><b>43 → alvo 50+</b></div>
     </div>
 
     <div class="panel" style="margin-top:12px">
       <h2>B3 · BLINDAGEM ANTI-LESÃO</h2>
-      <div class="kv"><span>Contratura posterior coxa E</span><b>~80% recuperada</b></div>
-      <div class="kv"><span>Dor (0–10)</span><b class="red">1–2 · vigilância</b></div>
-      <div class="kv"><span>Sono (meta 7–8 h)</span><b class="red">5H30 HOJE · 5H ONTEM ⚠</b></div>
-      <div class="kv"><span>Blindagem 15min (hoje)</span><b class="red">PENDENTE · 21H30</b></div>
+      <div class="kv"><span>Contratura posterior coxa E</span><b>~80% RECUPERADA</b></div>
+      <div class="kv"><span>Dor (0–10)</span><b class="red">A CONFIRMAR · ONTEM 1–2</b></div>
+      <div class="kv"><span>Sono (meta 7–8 h)</span><b class="red">5H30 · ONTEM 5H · MIRA 9H HOJE</b></div>
+      <div class="kv"><span>Blindagem 15min</span><b class="ok">✓ FEITA — MOBILIDADE + LIBERAÇÃO</b></div>
       <div class="kv"><span>REGRA DE OURO</span><b>volume só sobe com dor 0</b></div>
     </div>
   </div>
@@ -109,7 +109,7 @@ body::after{content:"";position:fixed;inset:0;background:repeating-linear-gradie
         <div class="ph" id="ph">⚡<b>Figura indisponível.</b>O link do Google Photos pode ter expirado — avise o Mr. T. na próxima carta que ele resolve.</div>
         <img src="https://lh3.googleusercontent.com/pw/AP1GczMVBBYq0K2FMNBM97O0dyParFzoqLUZsd_sORRsOZXoKyPu3FKDCIFtOWJ4oS8OTJeKWbrn5psQdePhocgT9ZszdnuI8RXcs9WPY2roRwGeJ8gNvXQa=w1600" alt="" onload="document.getElementById('ph').style.display='none'" onerror="this.style.display='none'">
       </div>
-      <div class="dor"><span class="lbl">DOR 1&ndash;2</span><span class="dot"></span></div>
+      <div class="dor"><span class="lbl">DOR 1–2</span><span class="dot"></span></div>
     </div>
     <p class="figcap mono">PESO: 113,8 KG · VO2 43<br>STATUS: EM EVOLUÇÃO</p>
   </div>
@@ -124,7 +124,7 @@ body::after{content:"";position:fixed;inset:0;background:repeating-linear-gradie
 
 </div>
 
-<p class="ft mono">DAILY PLAN v3 // MR. T. // DIA 2 · 2 DE 3 (BLINDAGEM À NOITE) // ATUALIZADO QUA 22/07/2026 · 18H54</p>
+<p class="ft mono">DAILY PLAN v3 // MR. T. // DIA 2: 3/3 ✓ // ATUALIZADO 22/07/2026 21h14</p>
 
 </body>
 </html>
