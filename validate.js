@@ -48,9 +48,11 @@ const blind = campo('Blindagem');
 if (blind) {
   PARCEIROS.forEach(p => {
     if (new RegExp(p, 'i').test(blind))
-      E('CONTAMINA', `campo Blindagem cita "${p}" — parceiro de treino não pertence à blindagem (é sessão solo). Valor: "${blind}"`);
+      E('CONTAMINA', `campo Blindagem cita "${p}" (parceiro de musculação/corrida). Valor: "${blind}". ` +
+        `CONFIRA O QUE O DOC INFORMOU: se ele disse que a blindagem foi com essa pessoa, o valor está certo — ` +
+        `libere. Se o nome veio de outro campo do dia, é contaminação: remova.`);
   });
-  if (/musculação|treino|corrida/i.test(blind))
+  if (/musculação|treino de|corrida/i.test(blind))
     E('CONTAMINA', `campo Blindagem cita outra atividade. Valor: "${blind}"`);
 }
 
@@ -58,22 +60,21 @@ const dieta = campo('DIETA');
 if (dieta && PARCEIROS.some(p => new RegExp(p, 'i').test(dieta)))
   E('CONTAMINA', `campo DIETA cita parceiro de treino. Valor: "${dieta}"`);
 
-/* ================= 2. COERÊNCIA COM A GRADE (metas/body.md) ================= */
-const GRADE = {
-  'Seg': { ex: 'Pernas', quem: 'Nicolle' },
-  'Ter': { ex: 'Costas + Bíceps', quem: 'Nicolle' },
-  'Qui': { ex: 'Peito + Tríceps', quem: 'Davi' },
-};
-Object.entries(GRADE).forEach(([dia, { ex, quem }]) => {
-  const re = new RegExp(`<span>\\s*${dia}\\s*·\\s*([^<(]+)\\(([^)]+)\\)`, 'i');
-  const m = html.match(re);
-  if (!m) { W('GRADE', `linha B2 de ${dia} não encontrada`); return; }
-  const exFound = m[1].trim(), quemFound = m[2].trim();
-  if (exFound.toLowerCase() !== ex.toLowerCase())
-    E('GRADE', `B2 ${dia}: painel diz "${exFound}", a grade diz "${ex}"`);
-  if (quemFound.toLowerCase() !== quem.toLowerCase())
-    E('GRADE', `B2 ${dia}: painel diz treinador "${quemFound}", a grade diz "${quem}"`);
-});
+/* ================= 2. O QUE O DOC INFORMA É A VERDADE ================= */
+/* NÃO existe checagem de "o exercício bate com a grade" — e isso é
+ * PROPOSITAL. A grade em metas/body.md é o PLANO; o que o Doc informou é o
+ * FATO. Treinar peito+ombro numa quinta prevista para peito+tríceps não é
+ * erro: é o dia como ele aconteceu, e é justamente o dado que interessa.
+ *
+ * Em 23/07/2026 eu (Mr. T.) "corrigi" o painel de "Peito + Ombro" para
+ * "Peito + Tríceps" porque era o que o documento dizia — apagando o relato
+ * do próprio Doc. Ele rebateu: "vale o que eu informar no áudio".
+ *
+ * REGRA PERMANENTE: nenhum validador, template ou doc de plano pode
+ * sobrescrever o que o Doc relatou. Divergência do plano é assunto de
+ * coaching (nota no log, conversa nas 21h) — NUNCA de validação.
+ * Se você está pensando em adicionar uma checagem aqui, não adicione.
+ */
 
 /* ================= 3. TEXTO VENCIDO PELO RELÓGIO ================= */
 /* "DIA COMEÇANDO" às 20h30 foi o 3º erro do Dia 3.              */

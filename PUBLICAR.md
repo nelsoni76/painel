@@ -31,12 +31,25 @@ node validate.js index.html && git add index.html && git commit -m "..." && git 
 
 Token sempre mascarado na saída: `2>&1 | sed -E 's/github_pat_[A-Za-z0-9_]+/***TOKEN***/g'`
 
+## Regra número 1 — o que o Doc informa é a verdade
+
+Os docs de plano (`metas/body.md`, a grade da semana, o template) dizem o que
+**estava previsto**. O que o Doc relatou por voz/texto diz o que **aconteceu**.
+Quando os dois divergem, **o relato vence, sempre**. Treinou peito+ombro numa
+quinta prevista para peito+tríceps? O painel escreve peito+ombro. Divergência do
+plano é dado de coaching (nota no log, conversa das 21h) — nunca um erro a
+"corrigir" no painel.
+
+*Em 23/07 eu troquei "Peito + Ombro" por "Peito + Tríceps" porque era o que o
+documento dizia, apagando o relato do Doc — e ainda transformei isso em regra do
+validador. Os dois foram desfeitos. O validador não checa e não deve checar
+aderência ao plano.*
+
 ## O que o validador pega
 
 | Código | O que checa | Erro que originou |
 |---|---|---|
-| `CONTAMINA` | nome de parceiro de treino vazando para o campo Blindagem/Dieta | "Blindagem ✓ FEITA (com Davi)" — 23/07 |
-| `GRADE` | exercício e treinador de cada dia batem com `metas/body.md` | "Peito + Ombro" no lugar de "Peito + Tríceps" — 23/07 |
+| `CONTAMINA` | nome de parceiro vazando para o campo Blindagem/Dieta (confirme contra o relato antes de remover) | "Blindagem ✓ FEITA (com Davi)" — 23/07 |
 | `RELOGIO` | texto que venceu com a hora ("DIA COMEÇANDO" às 20h) | água 23/07 |
 | `CARIMBO` | rodapé com data de hoje e hora ±20 min da real | carimbo 18h54 vivo às 20h30 |
 | `DATA` | `DIA N · DDD DD/MM` bate com o calendário | — |
@@ -47,7 +60,11 @@ Token sempre mascarado na saída: `2>&1 | sed -E 's/github_pat_[A-Za-z0-9_]+/***
 | `PROIBIDO` | textos banidos pelo template | — |
 | `PRIVACIDADE` | `noindex`, nome completo, padrão de paciente | — |
 
-## Regra de ouro
+**O validador pega erro mecânico** (texto herdado, dado vencido, cor que não
+pinta, vazamento de privacidade). Ele **não julga o conteúdo do dia** — isso é
+com o Doc.
+
+## Regra de ouro do conteúdo
 
 **Um campo só fala do que é dele.** Musculação tem treinador; corrida tem
 parceiro; blindagem é sessão solo; dieta é dieta. Quando um registro do dia
